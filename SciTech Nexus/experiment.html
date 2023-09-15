@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment - SciTech Nexus</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: url('./Assets/bg2.jpg');
+        } 
+        header {
+            background-color: #007acc;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            background-image: url('./Assets/bg.jpg');
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        h1 {
+            color: #007acc;
+            text-align: center;
+        }
+        /* Style for the experiment sections */
+        .experiment-section {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .experiment-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007acc;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .arrow {
+            font-size: 24px;
+            transition: transform 0.3s;
+            transform: rotate(0deg);
+        }
+        .experiment-content {
+            display: none;
+            padding-top: 10px;
+        }
+        .resource {
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .resource img {
+            max-width: 100%;
+            height: auto;
+        }
+        .resource a {
+            display: block;
+            margin: 10px 0;
+            color: #007acc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SciTech Nexus</h1>
+        <h3>Where Science and Technology Shake Hands.</h3>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+    <div class="container">
+        <h1>Some Experiment</h1>
+        <div class="experiment-section" id="section1">
+            <div class="experiment-title" onclick="toggleSection(1)">
+                Physics Experiments
+                <span class="arrow">&#x25B6;</span>
+            </div>
+            <div class="experiment-content">
+                <div class="resource">
+                    <a href="https://www.youtube.com/watch?v=uWChuDS-CbQ">Newton's Cradle</a>
+                </div>
+                <div class="resource">
+                    <a href="https://www.youtube.com/watch?v=Mw30CgaXiQw">Eratosthenes' measurement of the Earth's circumference
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="experiment-section" id="section2">
+            <div class="experiment-title" onclick="toggleSection(2)">
+                Chemistry Experiments
+                <span class="arrow">&#x25B6;</span>
+            </div>
+            <div class="experiment-content">
+                <div class="resource">
+                    <a href="https://www.youtube.com/watch?v=p2XIMKX3ktg">Colored fire</a>
+                </div>
+                <div class="resource">
+                    <a href="https://youtube.com/watch?v=1ueSa6-UqYo">Chemical traffic light</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="experiment-section" id="section3">
+            <div class="experiment-title" onclick="toggleSection(3)">
+                 Experiments That Can Done in Home 
+                <span class="arrow">&#x25B6;</span>
+            </div>
+            <div class="experiment-content">
+                <div class="resource">
+                    <a href="https://www.youtube.com/watch?v=N29K4WDgfKg">Mentos and Diet Soda Fountain</a>
+                </div>
+                <div class="resource">
+                    <a href="https://www.youtube.com/watch?v=PFHs-uNVFpw">Race a Balloon-Powered Car</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 SciTech Nexus</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentSection = null;
+
+        function toggleSection(sectionNumber) {
+            const section = document.getElementById(`section${sectionNumber}`);
+            const arrow = section.querySelector('.arrow');
+
+            if (section === currentSection) {
+                // If clicking on the currently open section, close it
+                section.querySelector('.experiment-content').style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+                currentSection = null;
+            } else {
+                // Close the previously open section (if any)
+                if (currentSection !== null) {
+                    currentSection.querySelector('.experiment-content').style.display = 'none';
+                    currentSection.querySelector('.arrow').style.transform = 'rotate(0deg)';
+                }
+                // Open the clicked section
+                section.querySelector('.experiment-content').style.display = 'block';
+                arrow.style.transform = 'rotate(90deg)';
+                currentSection = section;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SciTech Nexus: Where Science and Technology Shake Hands</title>
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            background-image: url('./Assets/bg2.jpg');
+        } 
+        header {
+            background-color: #007acc;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            background-image: url('./Assets/bg.jpg');
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        h1 {
+            color: #fff;
+        }
+        p {
+            line-height: 1.6;
+        }
+
+        /* Style for the interactive button */
+        .btn {
+            background-color: #007acc;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Style for the button on hover */
+        .btn:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SciTech Nexus</h1>
+        <h3>Where Science and Technology Shake Hands.</h3>
+    </header>
+    <nav>
+        <nav>   
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="contact.html">Contact</a>
+            <a href="experiment.html">Experiment</a>
+    </nav>
+    
+    </nav>
+    <div class="container">
+        <h2>Welcome to the SciTech Nexus</h2>
+        <p>
+            We are dedicated to fostering innovation and scientific discovery. Our hub brings together experts, researchers, and entrepreneurs to collaborate on groundbreaking projects that have the potential to shape the future.
+        </p>
+        <h5>Note: Whole website is just a demo and all info are fictional.</h5>
+    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 SciTech Nexus</p>
+            <br>
+            <h5>Note: This footer is just a demo and we never copyright this name and may soneone already copyright name.</h5>
+        </div>
+    </footer>
+
+    <!-- Add p5.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script>
+        // Define a function to run the interactive experiment
+        function runExperiment() {
+            // Clear any previous results
+            document.getElementById("experimentResult").innerHTML = "";
+
+            // Generate a random number between 1 and 100
+            const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+            // Display the random number as the result
+            document.getElementById("experimentResult").textContent = `Result: ${randomNumber}`;
+        }
+
+        // Attach the click event to the button
+        document.getElementById("startExperiment").addEventListener("click", runExperiment);
+    </script>
+</body>
+</html>
